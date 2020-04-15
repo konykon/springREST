@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Employees</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="employee.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="item">
+			<div class="block">
+				<h2>Create employee</h2>
+				<label>name</label>
+				<input type="text" id="name" />
+				<label>role</label>
+				<select id="listRoles">
+					<option value="none" selected >Select a role</option>
+					<option>ELECTRICIAN</option>
+					<option>PAINTER</option>
+					<option>CARPENTER</option>
+					<option>PLUMBER</option>
+				</select>
+				<input id="create" type="button" onClick="addEmployee()" value="create" />
+			</div>
+		</div>
+		<div class="item">
+			<div class="block">
+				<h2>Update employee</h2>
+				<label>find by name</label>
+				<input type="text" id="nameToUpdate" />
+				<label>new role</label>
+				<input type="role" id="roleToUpdate" />
+				<input id="update" type="button" onClick="updateEmployee()" value="update" />
+				<p id="msgUpdate"></p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="block">
+				<h2>Read employee</h2>
+				<label>name</label>
+				<input type="text" id="nameToRead" /><br>
+				<input type="button" onClick="readEmployee()" value="read" />
+				<p id="readMsg"></p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="block">
+				<h2>Delete employee</h2>
+				<label>name</label>
+				<input type="text" id="nameToDelete" /><br>
+				<input type="button" onClick="deleteEmployee()" value="delete" />
+				<p id="msgDel"></p>
+			</div>
+		</div>
+		<div class="block">
+			<h2>Employees</h2>
+			<table id="table">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Role</th>
+					<th>Salary</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
