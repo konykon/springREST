@@ -9,64 +9,44 @@
 </head>
 
 <body>
+
 	<div class="container">
-		<div class="item">
-			<div class="block">
-				<h2>Create employee</h2>
-				<label>name</label>
-				<input type="text" id="name" />
-				<label>role</label>
-				<select id="listRoles">
-					<option value="none" selected >Select a role</option>
-					<option>ELECTRICIAN</option>
-					<option>PAINTER</option>
-					<option>CARPENTER</option>
-					<option>PLUMBER</option>
-				</select>
-				<input id="create" type="button" onClick="addEmployee()" value="create" />
+		<div class="row">
+			<div class="col-md-5 col-md-offset-3">
+
+				<div class="alert alert-success" th:if="${param.logout}">
+					<span>Bye</span>
+				</div>
+
+				<div class="alert alert-danger" th:if="${param.error}">
+					<span>Invalid user or password</span>
+				</div>
+
+				<div class="panel panel-primary" id="painelLoginPrimaio">
+					<div class="panel-heading" id="painelLogin">Login</div>
+					<div class="panel-body">
+						<form th:action="@{/login}" method="post">
+							<div class="form-group">
+								<label for="user"><b id="texto">User</b></label> <input
+									id="user" type="text" name="username" class="form-control" />
+							</div>
+
+							<div class="form-group">
+								<label for="password"><b id="texto">Password</b></label> <input
+									id="password" type="password" name="password"
+									class="form-control" />
+							</div>
+							<div class="row">
+								<button type="submit"
+									class="btn col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xs-10 col-xs-offset-1"
+									id="btn-login">Entrar</button>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="item">
-			<div class="block">
-				<h2>Update employee</h2>
-				<label>find by name</label>
-				<input type="text" id="nameToUpdate" />
-				<label>new role</label>
-				<input type="role" id="roleToUpdate" />
-				<input id="update" type="button" onClick="updateEmployee()" value="update" />
-				<p id="msgUpdate"></p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="block">
-				<h2>Read employee</h2>
-				<label>name</label>
-				<input type="text" id="nameToRead" /><br>
-				<input type="button" onClick="readEmployee()" value="read" />
-				<p id="readMsg"></p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="block">
-				<h2>Delete employee</h2>
-				<label>name</label>
-				<input type="text" id="nameToDelete" /><br>
-				<input type="button" onClick="deleteEmployee()" value="delete" />
-				<p id="msgDel"></p>
-			</div>
-		</div>
-		<div class="block">
-			<h2>Employees</h2>
-			<table id="table">
-				<tr>
-					<th>Id</th>
-					<th>Name</th>
-					<th>Role</th>
-					<th>Salary</th>
-				</tr>
-			</table>
 		</div>
 	</div>
-</body>
 
+</body>
 </html>
