@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<div class="left">
+
+	<div class="item" sec:authorize="hasRole('VISUALIZAR_PESSOA')">
+		<a th:href="@{/}"><i class="fas fa-home"></i><span>Home</span></a>
+	</div>
+
+	<div class="item" sec:authorize="hasRole('VISUALIZAR_PESSOA')">
+		<a th:href="@{/employees}"><i class="fas fa-users"></i><span>Employees</span></a>
+	</div>
+
+</div>
+</html>

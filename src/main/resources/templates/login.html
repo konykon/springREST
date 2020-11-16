@@ -67,6 +67,16 @@ body {
 .login input[type="submit"]:focus {
 	border-color: #05a;
 }
+
+.alert {
+    border: 1px solid #86383e;
+    border-radius: 5px;
+    background-color: #d1adad;
+    font-size: 14px;
+    color: #86383e;
+    padding: 18px 0px;
+    text-align: center;
+}
 </style>
 
 
@@ -76,15 +86,15 @@ body {
 			<h2 class="login-header">Please Login here</h2>
 			<form name="f" th:action="@{/login}" method="post"
 				class="login-container">
+				<div th:if="${param.error}" class="alert alert-error">Invalid
+					username or password</div>
+				<div th:if="${param.logout}" class="alert alert-success">You
+					have been logged out, Please login again.</div>
 				<input type="text" id="username" name="username" value="admin" /> 
-				<input type="password" id="password" name="password" value="1234" />
+				<input type="password" id="password" name="password" value="1234" /> 
 				<input type="submit" class="btn" value="Login">
 			</form>
 		</div>
-		<div th:if="${param.error}" class="alert alert-error">Invalid
-			username or password</div>
-		<div th:if="${param.logout}" class="alert alert-success">You
-			have been logged out, Please login again.</div>
 	</div>
 </body>
 </html>

@@ -5,7 +5,7 @@
     grid-auto-rows: minmax(100px, auto);
   }
 
-  .item {
+  .table-item {
     border: 1px solid black;
     padding: 20px;
     text-align: center;
@@ -20,3 +20,17 @@
   th, td {
     border: 1px solid black;
   }
+  
+  .info-user {
+	color: #006bb3;
+	float: right;
+	margin-right: 10px;
+	font-size: 1.2em;	
+}
+
+.dashboard {
+	float: right;
+	width: 45%;
+	padding: 20px;	
+	color: lightslategray;
+}
