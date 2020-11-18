@@ -19,11 +19,9 @@ public class Employee {
 
 	}
 
-	public Employee(String name, Role role, String roleName, Double salary) {
+	public Employee(String name, Role role) {
 		setName(name);
 		setRole(role);
-		setRoleName(roleName);
-		setSalary(salary);
 	}
 
 	public Long getId() {
@@ -40,22 +38,6 @@ public class Employee {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getRoleName() {
-		return role.name();
-	}
-
-	public void setRoleName(String roleName) {
-		role.name();
-	}
-
-	public double getSalary() {
-		return role.getSalary();
-	}
-
-	public void setSalary(double salary) {
-		role.getSalary();
 	}
 
 	public Role getRole() {

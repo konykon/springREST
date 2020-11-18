@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="txt/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Home</title>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/navbar.css}" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+</head>
+
+<body>
+
+	<div class="info-user">
+		<div th:inline="text">
+	 		<form th:action="@{/logout}" method="post">
+				User: [[${#httpServletRequest.remoteUser}]]
+				<button type="submit" class="btn btn-link">
+					<i class="fas fa-sign-out-alt"></i>Logout
+				</button>
+			</form>	
+		</div>
+	</div>
+	
+	<div th:insert="navbar"></div>
+
+<!--	<script th:src="@{/js/jquery-3.2.1.min.js}"></script> -->
+	
+
+	
+
+</body>
+</html>

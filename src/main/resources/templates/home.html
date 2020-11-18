@@ -8,37 +8,20 @@
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>PDV</title>
-
-<link rel="stylesheet" type="text/css"
-	th:href="@{/css/bootstrap.min.css}" />
-<link rel="stylesheet" type="text/css"
-	th:href="@{/css/style.css}" />
-<link rel="stylesheet" type="text/css"
-	th:href="@{/css/navbar.css}" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+<title>Home</title>
 </head>
 
 <body>
 
-	<div class="info-user">
-		<div th:inline="text">
-	 		<form th:action="@{/logout}" method="post">
-				User: [[${#httpServletRequest.remoteUser}]]
-				<button type="submit" class="btn btn-link">
-					<i class="fas fa-sign-out-alt"></i>Logout
-				</button>
-			</form>	
-		</div>
+	<div th:insert="layout"></div>
+
+	<div class="main">
+
+		<h1 class="h1">Dashboard</h1>
+
+		<p class="pending">Under construction...</p>
+
 	</div>
-	
-	<h1 class="dashboard">Dashboard</h1>
-
-	<div th:insert="navbar"></div>
-
-<!--	<script th:src="@{/js/jquery-3.2.1.min.js}"></script> -->
-	
 
 </body>
 </html>
